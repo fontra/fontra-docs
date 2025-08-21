@@ -81,12 +81,12 @@ useful when working
 <div class="col-sm" markdown="1">
 ##### Source code 
 
-- [fontra](http://github.com/googlefonts/fontra)
-- [fontra-pak](http://github.com/googlefonts/fontra-pak)
-- [fontra-rcjk](http://github.com/googlefonts/fontra-rcjk)
-- [fontra-glyphs](http://github.com/googlefonts/fontra-glyphs)
-- [fontra-compile](http://github.com/googlefonts/fontra-compile)
-- [fontra-docs](http://github.com/googlefonts/fontra-docs)
+- [fontra](http://github.com/fontra/fontra)
+- [fontra-pak](http://github.com/fontra/fontra-pak)
+- [fontra-rcjk](http://github.com/fontra/fontra-rcjk)
+- [fontra-glyphs](http://github.com/fontra/fontra-glyphs)
+- [fontra-compile](http://github.com/fontra/fontra-compile)
+- [fontra-docs](http://github.com/fontra/fontra-docs)
 </div>
 <div class="col-sm" markdown="1">
 ##### Downloads

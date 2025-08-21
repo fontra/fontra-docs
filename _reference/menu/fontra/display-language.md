@@ -19,7 +19,7 @@ order     : 4913
 <div class="alert alert-primary mt-3" role="alert" markdown='1'>
 #### Pro tip: 
 {: .alert-heading}
-- Your language is missing? Feel free to contribute [github fontra](http://github.com/googlefonts/fontra)
+- Your language is missing? Feel free to contribute [github fontra](http://github.com/fontra/fontra)
 {: .mb-0 }
 </div>
 

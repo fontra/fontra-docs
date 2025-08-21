@@ -29,7 +29,7 @@ Glyphs sets are stored purely by references to online resources. A glyph set can
 
 We are considering supporting uploading of local files in the future, but for now consider this a pilot, where we encourage people strongly to use (and create) online glyph set resources.
 
-The currently bundled preset glyph sets collections are from Google Fonts, Black Foundry, Adobe and Christoph Koeberlin. We are [open to suggestions](https://github.com/googlefonts/fontra/discussions/1943) for more preset glyph sets.
+The currently bundled preset glyph sets collections are from Google Fonts, Black Foundry, Adobe and Christoph Koeberlin. We are [open to suggestions](https://github.com/fontra/fontra/discussions/1943) for more preset glyph sets.
 
 
 

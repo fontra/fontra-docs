@@ -14,5 +14,5 @@ order     : 1110
   </ol>
 </nav>
 
-Please go to the [Fontra Github repository](https://github.com/googlefonts/fontra) and follow the instructions written in the readme file.
+Please go to the [Fontra Github repository](https://github.com/fontra/fontra) and follow the instructions written in the readme file.
 

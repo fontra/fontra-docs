@@ -47,7 +47,7 @@ order     : 5099
 - additional styles are written in [Sass] (for example custom font, custom classes, icon, etc.)
 - the website is updated automatically at every commit to the `main` branch of the repository
 
-[fontra-docs]: http://github.com/googlefonts/fontra-docs
+[fontra-docs]: http://github.com/fontra/fontra-docs
 [Jekyll]: http://jekyllrb.com/
 [GitHub Pages]: http://pages.github.com/
 [kramdown]: http://kramdown.gettalong.org/index.html

@@ -2,8 +2,8 @@ import os, json, glob
 from urllib.request import urlopen
 
 # directory contents in json form
-iconsFontraURL = 'https://api.github.com/repos/googlefonts/fontra/contents/src/fontra/client/images'
-iconsTablerURL = 'https://api.github.com/repos/googlefonts/fontra/contents/src/fontra/client/tabler-icons'
+iconsFontraURL = 'https://api.github.com/repos/fontra/fontra/contents/src/fontra/client/images'
+iconsTablerURL = 'https://api.github.com/repos/fontra/fontra/contents/src/fontra/client/tabler-icons'
 
 # target docs folder for icon images
 baseFolder = os.path.dirname(os.getcwd())

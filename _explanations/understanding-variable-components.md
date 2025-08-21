@@ -21,4 +21,4 @@ order     : 5002
 
 ### Links
 
-- [Storing Variable Components in UFO files](http://github.com/googlefonts/variable-components-in-ufo)
+- [Storing Variable Components in UFO files](http://github.com/fontra/variable-components-in-ufo)

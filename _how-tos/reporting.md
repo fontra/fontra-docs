@@ -20,7 +20,7 @@ order     : 5001
 
 1. Sign in to [GitHub](https://github.com).
 
-2. Go to [Github Fontra Issues](https://github.com/googlefonts/fontra/issues)
+2. Go to [Github Fontra Issues](https://github.com/fontra/fontra/issues)
 
 3. Have a look if your bug/feature has been reported already by entering some keywords related to your issue within the search bar close to 'Filters' and hit 'Enter'.
 
@@ -31,8 +31,8 @@ order     : 5001
 4. Thanks for helping us make Fontra a better app.
 
 
-[Fontra Pak]: http://github.com/googlefonts/fontra-pak
+[Fontra Pak]: http://github.com/fontra/fontra-pak
 [build Fontra from source]: ../building-fontra-from-source
 [GitHub]: http://github.com
-[Actions]: http://github.com/googlefonts/fontra-pak/actions
+[Actions]: http://github.com/fontra/fontra-pak/actions
 

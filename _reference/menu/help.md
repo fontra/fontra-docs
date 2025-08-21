@@ -34,6 +34,6 @@ order     : 4960
 </tr>
 <tr>
 <td>Github</td>
-<td><a href='https://github.com/googlefonts/fontra' target="_blank">github.com/googlefonts/fontra</a></td>
+<td><a href='https://github.com/fontra/fontra' target="_blank">github.com/fontra/fontra</a></td>
 </tr>
 </table>

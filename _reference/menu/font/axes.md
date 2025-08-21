@@ -53,7 +53,7 @@ Fontra's approach is _variable-first_, therefore it's most likey that you will a
 
 <span id='marker_1'>¹Note: **Name** and **UI Name** are often the same.</span>
 {% comment %}
-For more please see: https://github.com/googlefonts/fontra-docs/pull/77#issuecomment-2518494551
+For more please see: https://github.com/fontra/fontra-docs/pull/77#issuecomment-2518494551
 {% endcomment %}
 
 ## Range

@@ -31,7 +31,7 @@ order     : 1103
 {: .mb-0 }
 </div>
 
-[Fontra Pak]: http://github.com/googlefonts/fontra-pak
+[Fontra Pak]: http://github.com/fontra/fontra-pak
 [build Fontra from source]: ../building-fontra-from-source
 [GitHub]: http://github.com
-[Actions]: http://github.com/googlefonts/fontra-pak/actions
+[Actions]: http://github.com/fontra/fontra-pak/actions

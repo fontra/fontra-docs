@@ -26,7 +26,7 @@ Follow the steps below to open your local files in the browser using the Fontra 
 
     ![]({{ site.url }}/images/fontra-browser-open.png){: .img-fluid }
 
-Example designspace format: [RobotoFlex.designspace](https://github.com/googlefonts/roboto-flex/blob/739e06dc46ebb14cddd88b9768a6c1504d4677f6/sources/RobotoFlex.designspace)
+Example designspace format: [RobotoFlex.designspace](https://github.com/fontra/roboto-flex/blob/739e06dc46ebb14cddd88b9768a6c1504d4677f6/sources/RobotoFlex.designspace)
 
 That's it! Have fun using Fontra to design and build your fonts.
 
