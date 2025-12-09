@@ -14,7 +14,10 @@ order     : 1101
   </ol>
 </nav>
 
-Fontra can be installed locally using [Fontra Pak], a self-contained application which allows you to edit local files in your browser using Fontra. The installer is available only for **macOS** and **Windows**. Linux users can [build Fontra from source] or if in X86_64 platform has option to download [pre-compiled pyinstaller binary]( https://github.com/mitradranirban/fontra-pak-linux/releases) or install snap package as per [this instructions](https://snapcraft.io/fontrapak) or install the [flatpak version](https://github.com/mitradranirban/fontrapak-flatpak/releases) as per their preference. 
+Fontra can be installed locally using [Fontra Pak], a self-contained application which allows you to edit local files in your browser using Fontra. The installer is available only for **macOS** and **Windows**. Linux users can [build Fontra from source] or if in X86_64 platform has 3 options
+* download [pre-compiled FontraPakUbuntu.tgz]( https://github.com/fontra/fontra-pak/releases/latest)
+* install snap package as per [this instructions](https://snapcraft.io/fontrapak) or
+* install the [flatpak version](https://github.com/fontra/fontra-flatpak/) as per their preference. 
 
 <div class="__video-responsive">
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/Kf0B2IN7Ig8?si=xV2GmVgYVHjmEIQ1&amp;start=95&end=374" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
