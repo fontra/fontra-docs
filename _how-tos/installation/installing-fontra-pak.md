@@ -16,7 +16,7 @@ order     : 1101
 
 Fontra can be installed locally using [Fontra Pak], a self-contained application which allows you to edit local files in your browser using Fontra. The installer is available only for **macOS** and **Windows**. Linux users can [build Fontra from source] or if in X86_64 platform has 3 options
 * download [pre-compiled FontraPakUbuntu.tgz]( https://github.com/fontra/fontra-pak/releases/latest)
-* install snap package as per [this instructions](https://snapcraft.io/fontrapak) or
+* install snap package as per [these instructions](https://snapcraft.io/fontrapak) or
 * install the [flatpak version](https://github.com/fontra/fontra-flatpak/) as per their preference. 
 
 <div class="__video-responsive">
