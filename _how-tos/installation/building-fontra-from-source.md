@@ -1,5 +1,5 @@
 ---
-title     : Building Fontra from source
+title     : Building Fontra Pak from source
 layout    : default
 permalink : /how-tos/installation/building-fontra-from-source/
 draft     : true
@@ -14,5 +14,4 @@ order     : 1110
   </ol>
 </nav>
 
-Please go to the [Fontra Github repository](https://github.com/fontra/fontra) and follow the instructions written in the readme file.
-
+To build Fontra Pak from the sources, please follow the instructions on the [Fontra Pak GitHub repository](https://github.com/fontra/fontra).
