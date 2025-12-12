@@ -14,19 +14,13 @@ order     : 1101
   </ol>
 </nav>
 
-Fontra can be installed locally using [Fontra Pak], a self-contained application which allows you to edit local files in your browser using Fontra. The installer is available for **macOS** and **Windows**. Linux users can [build Fontra from source] or, if on the X86_64 platform, there are three options:
-* download [pre-compiled FontraPakUbuntu.tgz]( https://github.com/fontra/fontra-pak/releases/latest)
-* install snap package as per [these instructions](https://snapcraft.io/fontrapak) or
-* install the [flatpak version](https://github.com/fontra/fontra-flatpak/) as per their preference. 
+Fontra can be installed locally using [Fontra Pak](http://github.com/fontra/fontra-pak), a self-contained application which allows you to edit local files in your browser using Fontra. Ready-to-use Fontra Pak downloads are available for [macOS, Windows and Ubuntu Linux x86_64](https://github.com/fontra/fontra-pak/releases/latest).
+
+Linux users can also [build Fontra Pak from the source](https://github.com/fontra/fontra-pak/blob/main/README.md) or, if on the x86_64 platform, choose from these three options:
+* Download [pre-compiled FontraPakUbuntu.tgz](https://github.com/fontra/fontra-pak/releases/latest)
+* Install snap package as per [these instructions](https://snapcraft.io/fontrapak)
+* Install the [flatpak version](https://github.com/fontra/fontra-flatpak/)
 
 <div class="__video-responsive">
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/Kf0B2IN7Ig8?si=xV2GmVgYVHjmEIQ1&amp;start=95&end=374" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
-
-Have fun: [Building Fontra from source]({{ site.url }}/how-tos/installation/building-fontra-from-source)
-
-
-[Fontra Pak]: http://github.com/fontra/fontra-pak
-[build Fontra from source]: ../building-fontra-from-source
-[GitHub]: http://github.com
-[Actions]: http://github.com/fontra/fontra-pak/actions
