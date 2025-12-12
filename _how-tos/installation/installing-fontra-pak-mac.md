@@ -14,7 +14,7 @@ order     : 1102
   </ol>
 </nav>
 
-1. [Download Fontra Pak for Mac](https://fontra-download.black-foundry.com/FontraPak.dmg)
+1. [Download Fontra Pak for Mac](https://github.com/fontra/fontra-pak/releases/latest)
 
 2. Unzip and double-click the package
 

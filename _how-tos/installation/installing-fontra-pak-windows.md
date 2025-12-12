@@ -14,7 +14,7 @@ order     : 1103
   </ol>
 </nav>
 
-1. [Download Fontra Pak for Windows](https://fontra-download.black-foundry.com/FontraPak.zip)
+1. [Download Fontra Pak for Windows](https://github.com/fontra/fontra-pak/releases/latest)
 
 2. Unzip and double-click the package
 
