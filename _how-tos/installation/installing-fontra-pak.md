@@ -18,6 +18,7 @@ Fontra can be installed locally using [Fontra Pak](http://github.com/fontra/font
 
 * [Installing Fontra Pak on macOS](installation/installing-fontra-pak-mac)
 * [Installing Fontra Pak on Windows](installation/installing-fontra-pak-windows)
+* [Installing Fontra Pak on Linux](installation/installing-fontra-pak-linux)
 
 Linux users can also [build Fontra Pak from the source](https://github.com/fontra/fontra-pak/blob/main/README.md) or, if on the x86_64 platform, choose from these three options:
 * Download [pre-compiled FontraPakUbuntu.tgz](https://github.com/fontra/fontra-pak/releases/latest)
