@@ -19,8 +19,8 @@ Linux users can [build Fontra Pak from the source](https://github.com/fontra/fon
 * Download [pre-compiled FontraPakUbuntu.tgz](https://github.com/fontra/fontra-pak/releases/latest)
     1. Extract the .tgz with `tar xvf FontraPakUbuntu.tgz`
     2. You will get the "fontrapak" file. Make it executable with `chmod +x fontrapak`
-    3. Next add it to your $PATH, or just execute with `./fontrapak`
-    → Having fontra in your path lets you start fontra with any launcher or directly from your terminal. <br/>
+    3. Next add it to your $PATH, or just execute with `./fontrapak`<br/>
+    → Having fontra in your path lets you start fontra with any launcher or directly from your terminal.<br/>
     This solution works on Linux Debian based systems. Let us know if you have any issues.
     Also, keep in mind that this way won't allow for automatic update. You will have to repeat those steps.
 * Install snap package as per [these instructions](https://snapcraft.io/fontrapak)
