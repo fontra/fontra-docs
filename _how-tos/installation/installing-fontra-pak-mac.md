@@ -22,7 +22,7 @@ order     : 1102
 
   ![]({{ site.url }}/images/fontra-pak-installer.png){: .img-fluid}
 
-Alternatively, `homebrew` users can install Fontra Pak with the following command:
+Alternatively, [homebrew](https://formulae.brew.sh/cask/fontra-pak) users can install Fontra Pak with the following command:
 
     brew install --cask fontra-pak
 
