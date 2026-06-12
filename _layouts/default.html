@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ page.title }}{% unless page.name == 'index.md' %} · {{ site.title }}{% endunless %}</title>
+  <title>{{ title }}{% unless page.url == "/" %} · {{ site.title }}{% endunless %}</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
   <link rel="stylesheet" href="{{ site.url }}/css/style.css" type="text/css" />
@@ -14,66 +14,51 @@
   <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
 </head>
 
-{% if page.collection %}
-  {% capture all_pages %}{{ page.collection }}{% endcapture %}
-  {% assign pages = site[all_pages] | sort: "order" %}
-  {% for nav_page in pages %}
-    {% if nav_page.title == page.title %}
-      {% unless forloop.first %}
-        {% assign prev_url = prev.url %}
-        {% assign prev_title = prev.title %}
-      {% endunless %}
-      {% unless forloop.last %}
-        {% assign next = pages[forloop.index] %}
-        {% assign next_url = next.url %}
-        {% assign next_title = next.title %}
-      {% endunless %}
-    {% endif %}
-    {% assign prev = nav_page %}
-  {% endfor %}
+{% if section %}
+  {% assign sectionPages = collections[section] %}
+  {% assign prevPage = sectionPages | getPreviousCollectionItem %}
+  {% assign nextPage = sectionPages | getNextCollectionItem %}
 {% endif %}
 
 <body class='d-flex flex-column h-100'>
-  {% include header.html %}
+  {% include "header.html" %}
   <main class='flex-shrink-0'>
     <div class="container px-lg-4 pt-3 pb-4">
 
       <div class='row'>
-        <h1 class='col-9'>{{ page.title }}</h1>
-        {% if page.collection %}
-          {% if prev_url or next_url %}
-            <nav class='col-3 mt-2'>
-              <ul class="pagination pagination-sm float-end">
-                {% if prev_url %}
-                  <li class="page-item">
-                    <a class="page-link px-3 prev" href="{{ site.url }}/{{prev_url}}" title='{{ prev_title }}'>&laquo;</a>
-                  </li>
-                {% endif %}
-                {% if next_url %}
-                  <li class="page-item">
-                    <a class="page-link px-3 next" href="{{ site.url }}/{{next_url}}" title='{{ next_title }}'>&raquo;</a>
-                  </li>
-                {% endif %}
-              </ul>
-            </nav>
-          {% endif %}
+        <h1 class='col-9'>{{ title }}</h1>
+        {% if prevPage or nextPage %}
+          <nav class='col-3 mt-2'>
+            <ul class="pagination pagination-sm float-end">
+              {% if prevPage %}
+                <li class="page-item">
+                  <a class="page-link px-3 prev" href="{{ site.url }}{{ prevPage.url | clean_url }}" title='{{ prevPage.data.title }}'>&laquo;</a>
+                </li>
+              {% endif %}
+              {% if nextPage %}
+                <li class="page-item">
+                  <a class="page-link px-3 next" href="{{ site.url }}{{ nextPage.url | clean_url }}" title='{{ nextPage.data.title }}'>&raquo;</a>
+                </li>
+              {% endif %}
+            </ul>
+          </nav>
         {% endif %}
       </div>
 
       {{ content }}
     </div>
   </main>
-  {% include footer.html %}
+  {% include "footer.html" %}
 </body>
 
 <script>
   // add toc toggler
   $(function(){
-    $('#markdown-toc').click(function(e){
-      $(this).children('li').toggle();
+    $('.markdown-toc').click(function(e){
+      $(this).find('li').toggle();
       $(this).toggleClass('toc-collapse');
     });
-    $("#markdown-toc li").click(function(e){
+    $(".markdown-toc li").click(function(e){
       e.stopPropagation();
     });
   });

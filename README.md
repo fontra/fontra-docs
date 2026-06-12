@@ -2,29 +2,62 @@
 
 Hosted at [docs.fontra.xyz](https://docs.fontra.xyz)
 
-## How to building the site locally
+Built with [Eleventy (11ty)](https://www.11ty.dev/) — the same generator as
+[fontra-blog](https://github.com/fontra/fontra-blog).
 
-### 1. make sure you have installed the following:
+## Building the site locally
 
-1. Go to [testing-your-github-pages-site-locally-with-jekyll](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/testing-your-github-pages-site-locally-with-jekyll)
+Requires [Node.js](https://nodejs.org/) 18 or newer.
 
-2. Install: [jekyllrb](https://jekyllrb.com/docs/installation/)
+```
+npm install
+npm start
+```
 
-3. Install [bundler](https://bundler.io/)
+Then open the address shown in the terminal (usually `http://localhost:8080`).
+The dev server rebuilds and reloads on every change.
 
-### 2. build site locally
+To produce a production build in `_site/`:
 
-1. Open Terminal.
+```
+npm run build
+npm run check-urls   # verifies all expected URLs exist in _site/
+```
 
-2. Navigate to the publishing source for your site.
+## How the site is organized
 
-3. Run `bundle install`.
+- `content/` — all pages, as Markdown with YAML front matter, in five
+  sections: `introduction/`, `tutorials/`, `how-tos/`, `reference/`,
+  `explanations/`. Each section is an Eleventy collection; the `order`
+  front matter drives the prev/next links.
+- `content/css/style.sass` + `_sass/` — styles (compiled by the build).
+- `_layouts/`, `_includes/` — the page template (Liquid).
+- `_data/site.js` — site-wide values (`site.url`, `site.title`, …).
+- `images/`, `videos/` — static assets, copied as-is.
+- `eleventy.config.js` — build configuration, including a small
+  kramdown-compatibility layer (see comments there) so the Markdown
+  written for the previous Jekyll setup renders unchanged.
+- `scripts/check-url-parity.mjs` — asserts that every URL from the
+  Jekyll era still exists in the build output.
 
-4. Run your Jekyll site locally `bundle exec jekyll serve` or `bundle exec jekyll serve --livereload`.
+### Front matter
 
-5. open the server adress you find in the terminal output, similar to:
+```
+---
+title     : Page title
+layout    : default
+permalink : /section/page-name/
+order     : 4232
+---
+```
 
-   `>    Server address: http://127.0.0.1:4000/`
+Permalinks are explicit and must not be changed casually — existing links
+into docs.fontra.xyz depend on them (`npm run check-urls` guards this).
+
+## Deployment
+
+Pushes to `main` are built and deployed to GitHub Pages by
+[`.github/workflows/deploy.yml`](.github/workflows/deploy.yml).
 
 # Credits
 

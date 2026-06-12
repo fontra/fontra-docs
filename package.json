@@ -1,0 +1,22 @@
+{
+	"name": "fontra-docs",
+	"version": "1.0.0",
+	"description": "Fontra user documentation, hosted at docs.fontra.xyz",
+	"type": "module",
+	"scripts": {
+		"build": "npx @11ty/eleventy",
+		"start": "npx @11ty/eleventy --serve --quiet",
+		"check-urls": "node scripts/check-url-parity.mjs"
+	},
+	"license": "CC-BY-4.0",
+	"engines": {
+		"node": ">=18"
+	},
+	"devDependencies": {
+		"@11ty/eleventy": "^3.0.0",
+		"markdown-it-anchor": "^9.2.0",
+		"markdown-it-attrs": "^4.3.1",
+		"markdown-it-table-of-contents": "^0.9.0",
+		"sass": "^1.80.0"
+	}
+}

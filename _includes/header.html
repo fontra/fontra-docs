@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-body-secondary px-2">
   <div class="container">
-    <a class="navbar-brand" href="{{ site.url }}">
+    <a class="navbar-brand" href="{{ site.url }}/">
       <img height="60" src="{{ site.url }}/images/icons/fontra-icon.svg">
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -8,11 +8,11 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <div class="navbar-nav fs-5">
-        <a class="nav-link {% if page.name == 'introduction.md' %}active{% endif %}" href="{{ site.url }}/introduction">Introduction</a>
-        <a class="nav-link {% if page.name == 'tutorials.md' %}active{% endif %}" href="{{ site.url }}/tutorials">Tutorials</a>
-        <a class="nav-link {% if page.name == 'how-tos.md' %}active{% endif %}" href="{{ site.url }}/how-tos">How-Tos</a>
-        <a class="nav-link {% if page.name == 'reference.md' %}active{% endif %}" href="{{ site.url }}/reference">Reference</a>
-        <a class="nav-link {% if page.name == 'explanations.md' %}active{% endif %}" href="{{ site.url }}/explanations">Explanations</a>
+        <a class="nav-link {% if page.url == '/introduction/' %}active{% endif %}" href="{{ site.url }}/introduction">Introduction</a>
+        <a class="nav-link {% if page.url == '/tutorials/' %}active{% endif %}" href="{{ site.url }}/tutorials">Tutorials</a>
+        <a class="nav-link {% if page.url == '/how-tos/' %}active{% endif %}" href="{{ site.url }}/how-tos">How-Tos</a>
+        <a class="nav-link {% if page.url == '/reference/' %}active{% endif %}" href="{{ site.url }}/reference">Reference</a>
+        <a class="nav-link {% if page.url == '/explanations/' %}active{% endif %}" href="{{ site.url }}/explanations">Explanations</a>
       </div>
     </div>
   </div>
