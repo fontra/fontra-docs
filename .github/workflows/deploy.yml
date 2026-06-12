@@ -3,6 +3,7 @@ name: Build and deploy to GitHub Pages
 on:
   push:
     branches: [main]
+  pull_request:
   workflow_dispatch:
 
 permissions:
@@ -31,6 +32,8 @@ jobs:
           path: _site
 
   deploy:
+    # PRs only build (as a check); deployment happens on push to main
+    if: github.event_name != 'pull_request'
     needs: build
     runs-on: ubuntu-latest
     environment:
