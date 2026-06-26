@@ -14,6 +14,11 @@ Getting started
 <video src="{{ site.url }}/videos/Fontra-for-beginners-your-first-varialbe-font.mp4" controls="controls" style="width: 100%; max-width: 600px">
 </video>
 
+## 1-hour tutorial by Eugénie Bidaut (in French)
+
+<iframe style="max-width: 600px; width: 100%; aspect-ratio: 16 / 9;" src="https://www.youtube-nocookie.com/embed/Hri8FCSyzug" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+</iframe>
+
 ## **Export as** introduction
 
 <video src="{{ site.url }}/videos/export-as.mp4" controls="controls" style="width: 100%; max-width: 600px">
