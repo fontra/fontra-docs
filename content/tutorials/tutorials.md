@@ -16,7 +16,7 @@ Getting started
 
 ## One-hour tutorial by Eugénie Bidaut (in French)
 
-<iframe style="max-width: 600px; width: 100%; aspect-ratio: 16 / 9;" src="https://www.youtube-nocookie.com/embed/Hri8FCSyzug" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+<iframe class="youtube-embed" src="https://www.youtube-nocookie.com/embed/Hri8FCSyzug" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
 </iframe>
 
 ## **Export as** introduction
