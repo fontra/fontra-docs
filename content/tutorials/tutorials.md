@@ -29,7 +29,7 @@ Getting started
 <video src="{{ site.url }}/videos/pen-tool-introduction.mp4" controls="controls" style="width: 100%; max-width: 600px">
 </video>
 
-## **Pen tool** multi source editing
+## **Pen tool** multi-source editing
 
 <video src="{{ site.url }}/videos/pen-tool-multi-source-editing.mp4" controls="controls" style="width: 100%; max-width: 600px">
 </video>
@@ -39,12 +39,12 @@ Getting started
 <video src="{{ site.url }}/videos/shape-tool-introduction.mp4" controls="controls" style="width: 100%; max-width: 600px">
 </video>
 
-## **Knife tool** multi source editing
+## **Knife tool** multi-source editing
 
 <video src="{{ site.url }}/videos/knife-tool.mp4" controls="controls" style="width: 100%; max-width: 600px">
 </video>
 
-## **Interactive transformation** multi source editing
+## **Interactive transformation** multi-source editing
 
 <video src="{{ site.url }}/videos/interactive-transformation.mp4" controls="controls" style="width: 100%; max-width: 600px">
 </video>
@@ -54,12 +54,12 @@ Getting started
 <video src="{{ site.url }}/videos/align-distribute-objects.mp4" controls="controls" style="width: 100%; max-width: 600px">
 </video>
 
-## **Path operations** multi source editing
+## **Path operations** multi-source editing
 
 <video src="{{ site.url }}/videos/path-operations.mp4" controls="controls" style="width: 100%; max-width: 600px">
 </video>
 
-## **Close/Join contours** multi source editing
+## **Close/Join contours** multi-source editing
 
 <video src="{{ site.url }}/videos/close-contours.mp4" controls="controls" style="width: 100%; max-width: 600px">
 </video>
@@ -69,7 +69,7 @@ Getting started
 <video src="{{ site.url }}/videos/canvas-glyph-editor-anchor.mp4" controls="controls" style="width: 100%; max-width: 600px">
 </video>
 
-## Position **Anchors** (multi source editing)
+## Position **Anchors** (multi-source editing)
 
 With the help of _Align and distribute objects._
 
@@ -94,4 +94,14 @@ With the help of _Align and distribute objects._
 ## **Variable components** introduction
 
 <video src="{{ site.url }}/videos/Fontra-variable-component.mp4" controls="controls" style="width: 100%; max-width: 600px">
+</video>
+
+## **Alternate Glyphs** and writing OpenType Feature code
+
+<video src="{{ site.url }}/videos/Fontra-alternate-glyphs-and-opentype-feature-coding.mp4" controls="controls" style="width: 100%; max-width: 600px">
+</video>
+
+## General **Multi-source** editing introduction
+
+<video src="{{ site.url }}/videos/Fontra-multi-source-editing-2.mp4" controls="controls" style="width: 100%; max-width: 600px">
 </video>
