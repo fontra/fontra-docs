@@ -100,3 +100,7 @@ With the help of _Align and distribute objects._
 
 <video src="{{ site.url }}/videos/Fontra-alternate-glyphs-and-opentype-feature-coding.mp4" controls="controls" style="width: 100%; max-width: 600px">
 </video>
+
+<video src="{{ site.url }}/videos/Fontra-multi-source-editing-2.mp4" controls="controls" style="width: 100%; max-width: 600px">
+</video>
+
