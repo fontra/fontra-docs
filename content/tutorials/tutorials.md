@@ -95,3 +95,8 @@ With the help of _Align and distribute objects._
 
 <video src="{{ site.url }}/videos/Fontra-variable-component.mp4" controls="controls" style="width: 100%; max-width: 600px">
 </video>
+
+## **Alternate Glyphs** and writing OpenType Feature code
+
+<video src="{{ site.url }}/videos/Fontra-alternate-glyphs-and-opentype-feature-coding.mp4" controls="controls" style="width: 100%; max-width: 600px">
+</video>
