@@ -96,6 +96,21 @@ With the help of _Align and distribute objects._
 <video src="{{ site.url }}/videos/Fontra-variable-component.mp4" controls="controls" style="width: 100%; max-width: 600px">
 </video>
 
+## Placing a **Background image**
+
+<video src="{{ site.url }}/videos/fontra-background-image-demo.mp4" controls="controls" style="width: 100%; max-width: 600px">
+</video>
+
+## **The pen tool:** Tracing a background image
+
+<video src="{{ site.url }}/videos/fontra-pen-tool-demo.mp4" controls="controls" style="width: 100%; max-width: 600px">
+</video>
+
+## **The pointer tool tool:** Fine tuning a drawing
+
+<video src="{{ site.url }}/videos/fontra-pointer-tool-demo.mp4" controls="controls" style="width: 100%; max-width: 600px">
+</video>
+
 ## **Alternate Glyphs** and writing OpenType Feature code
 
 <video src="{{ site.url }}/videos/Fontra-alternate-glyphs-and-opentype-feature-coding.mp4" controls="controls" style="width: 100%; max-width: 600px">
@@ -105,3 +120,10 @@ With the help of _Align and distribute objects._
 
 <video src="{{ site.url }}/videos/Fontra-multi-source-editing-2.mp4" controls="controls" style="width: 100%; max-width: 600px">
 </video>
+
+## Creating a **Font for Motion** from start to finish, and animating it (sped up 3x). Demo by Aleksandra Samuļenkova.
+
+<video src="{{ site.url }}/videos/fontra-motion-fonts.mp4" controls="controls" style="width: 100%; max-width: 600px">
+</video>
+
+<p><!-- extra whitespace -->
