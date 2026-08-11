@@ -111,9 +111,19 @@ With the help of _Align and distribute objects._
 <video src="{{ site.url }}/videos/fontra-pointer-tool-demo.mp4" controls="controls" style="width: 100%; max-width: 600px">
 </video>
 
+## **Variability:** Adding a Weight axis and making a Bold glyph
+
+<video src="{{ site.url }}/videos/fontra-weight-axis-demo.mp4" controls="controls" style="width: 100%; max-width: 600px">
+</video>
+
 ## **Alternate Glyphs** and writing OpenType Feature code
 
 <video src="{{ site.url }}/videos/Fontra-alternate-glyphs-and-opentype-feature-coding.mp4" controls="controls" style="width: 100%; max-width: 600px">
+</video>
+
+## **Contextual Alternate Glyph** and writing OpenType Feature code
+
+<video src="{{ site.url }}/videos/fontra-calt-demo.mp4" controls="controls" style="width: 100%; max-width: 600px">
 </video>
 
 ## General **Multi-source** editing introduction
