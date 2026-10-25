@@ -43,7 +43,7 @@ Added in *Application settings › [Plugins]({{ site.url }}/reference/menu/fontr
 <table class='table table-hover'>
 <tr><th width='35%'>Address</th><th width='65%'>Resolved to</th></tr>
 <tr><td><code>owner/repo</code> (exactly one slash)</td><td><code>https://cdn.jsdelivr.net/gh/owner/repo@latest</code> — a GitHub repository with the plug-in files at its root and at least one tagged release.</td></tr>
-<tr><td><code>https://…/folder</code></td><td>Used as is. The server must send CORS headers.</td></tr>
+<tr><td><code>https://…/folder</code></td><td>Used as is. The server must send CORS headers and serve the scripts with a JavaScript media type (GitHub Pages and jsDelivr do; <code>github.com</code> and <code>raw.githubusercontent.com</code> do not).</td></tr>
 <tr><td><code>/folder</code></td><td>A path on the Fontra server itself, for example <code>/localplugins/my-plugin</code> or a <code>fontra.webcontent</code> package.</td></tr>
 </table>
 

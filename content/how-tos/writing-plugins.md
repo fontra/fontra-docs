@@ -45,7 +45,7 @@ Most people start with an editor plug-in, so the rest of this page is mainly abo
 The address can be:
 
 - **`owner/repo`** (exactly one slash): a GitHub repository, loaded through jsDelivr as `https://cdn.jsdelivr.net/gh/owner/repo@latest`. Tag a release so `@latest` has something to resolve to, and check that `https://cdn.jsdelivr.net/gh/owner/repo@latest/plugin.json` opens in your browser. jsDelivr caches files, so a new release can take a while to show up.
-- **A full URL** (`https://example.com/my-plugin`) or **a path on the Fontra server** (`/localplugins/my-plugin`, `/hive/plugin`).
+- **A full URL** (`https://example.com/my-plugin`) or **a path on the Fontra server** (`/localplugins/my-plugin`, `/hive/plugin`). A full URL's server must send CORS headers and serve the scripts as JavaScript: GitHub Pages does both (`https://<owner>.github.io/<repo>`, with the plug-in's files at the repository's root), so does jsDelivr. The repository's own address (`https://github.com/<owner>/<repo>`) and `raw.githubusercontent.com` do not: `plugin.json` loads, but the module comes as plain text, which the browser refuses, and the console says *Module didn't load*.
 
 Errors go to the browser console (“Plugin metadata not found”, “Module didn't load”, “Error occured when running … plugin”), and the editor carries on without the plug-in. Keep the developer tools open while you work.
 
