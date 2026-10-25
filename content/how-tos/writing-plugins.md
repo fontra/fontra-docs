@@ -354,8 +354,8 @@ GitHub Pages serves every file with the right media type and with `Access-Contro
 The short form `owner/repo` is loaded through jsDelivr as `https://cdn.jsdelivr.net/gh/owner/repo@latest/…`, and **`@latest` means the latest tagged release**: a repository with no tag has nothing to resolve to, `plugin.json` is a 404, and the plug-in manager refuses the address with the same *An error occured when fetching the plugin*.
 
 1. Tag a release and push the tag: `git tag v0.1.0 && git push --tags` (any tag that reads as a version; a GitHub *Release* made from the web does the same).
-2. Check that `https://cdn.jsdelivr.net/gh/<owner>/<repo>@latest/plugin.json` opens in a browser. jsDelivr caches `@latest` for up to 24 hours, so a brand-new tag can take a while to show up; the exact tag, `…@v0.1.0/plugin.json`, is available at once.
-3. Add `owner/repo` in *Application settings › Plugins*. Users get the newest tag the next time jsDelivr refreshes; tag again to publish a new version.
+2. Check that `https://cdn.jsdelivr.net/gh/<owner>/<repo>@latest/plugin.json` opens in a browser. jsDelivr caches `@latest` for up to 24 hours, and that includes a *failed* lookup: if anyone asked for `@latest` before the first tag existed, that exact spelling keeps answering *Failed to fetch version info* until the cache expires. The cache is per spelling, so **write the owner in lower case** (`uplus-type/fontra-tutorials`), which GitHub accepts and which is unlikely to have been tried before; the exact tag, `…@v0.1.0/plugin.json`, is available at once in any case.
+3. Add `owner/repo` in *Application settings › Plugins*, owner in lower case. Users get the newest tag the next time jsDelivr refreshes; tag again to publish a new version.
 
 ### What does not work
 
