@@ -3,7 +3,7 @@ title     : Writing your own plug-ins
 layout    : default
 permalink : /how-tos/writing-plugins/
 draft     : true
-order     : 2801
+order     : 4801
 ---
 
 <nav aria-label="breadcrumb">
@@ -29,9 +29,9 @@ Fontra is a Python server plus a JavaScript front end that runs in the browser, 
 |---|---|---|
 | `fontra.filesystem.backends` | Read and write a file format (the entry point name is the file extension) | [fontra-glyphs](https://github.com/fontra/fontra-glyphs) (`.glyphs`, `.glyphspackage`) |
 | `fontra.projectmanagers` | A new `fontra <name>` subcommand that decides where fonts come from, who may open them, and which routes the server has | [fontra-rcjk](https://github.com/fontra/fontra-rcjk), Fontra Hive |
-| `fontra.webcontent` | Static files served under `/<name>/` (for example, an editor plug-in shipped inside a Python package) | Fontra Hive |
+| `fontra.webcontent` | Static files served under `/<name>/` (for example, an editor plug-in shipped inside a Python package); only `.js`, `.json`, `.svg`, `.css`, `.html`, `.txt`, `.csv`, `.ico`, `.woff2` and `.wasm` files are served | Fontra Hive |
 | `fontra.workflow.actions` | New actions for `fontra-workflow` | — |
-| `fontra.views` | Whole views (pages) such as `editor` or `fontoverview` | Fontra itself |
+| `fontra.views` | Informational only: the names are listed under *View plugins* in *Server info*; the views themselves are not loaded through it | Fontra itself |
 
 The two kinds combine well: a Python package can serve its own editor plug-in through `fontra.webcontent`, and that plug-in can then talk to routes the same package adds on the server. This is how Fontra Hive works (see below).
 
@@ -198,11 +198,11 @@ What Fontra expects from a panel: an HTML element with an `identifier` and an `i
 
 ### Trying it out
 
-- **Quickest, from a Fontra source checkout** (`pip install -e .`): Fontra serves the folder `src/fontra/localplugins/` (ignored by git) under `/localplugins/`. Put `glyph-info/` there, add the address `/localplugins/glyph-info` in *Application settings › Plugins*, and reload the editor.
+- **Quickest, from a Fontra source checkout** (`pip install -e .`): Fontra serves the folder `src/fontra/localplugins/` under `/localplugins/`. The folder is ignored by git and doesn't exist in a fresh checkout, so create it, put `glyph-info/` inside, add the address `/localplugins/glyph-info` in *Application settings › Plugins*, and reload the editor.
 - **From another local server**: any static server works if it sends CORS headers, since the plug-in is on another origin than Fontra; for example `npx http-server --cors -p 8080` in the folder that contains `glyph-info/`, then add `http://localhost:8080/glyph-info`. (Python's `http.server` sends no CORS headers, so the browser refuses it.)
 - **Published**: push the folder's contents to the root of a GitHub repository, tag a release, and add `owner/repo`.
 
-Fontra serves plug-in files without caching headers, and a module loaded with `import()` is often kept by the browser even after a hard reload. While developing, tick *Disable cache* in the developer tools' Network tab.
+Fontra dates every static file it serves at the time the server started, and answers *304 Not Modified* to a browser that already has it, so an edit to a plug-in under `/localplugins/` (or any `fontra.webcontent` package) stays invisible until the server is restarted. While developing, tick *Disable cache* in the developer tools' Network tab, which makes the browser fetch the files afresh; a module loaded with `import()` can also be kept by the browser even after a hard reload, and the same setting takes care of that. Note that a plug-in served from another origin (a local `http-server`, jsDelivr) is cached by that server's own rules instead.
 
 ## Adding to the boilerplate
 
@@ -240,7 +240,7 @@ function addCenterLineLayer(editor) {
     identifier: LAYER_ID,
     name: "Glyph info: center line",
     userSwitchable: false, // see "Limitations" below
-    zIndex: 150, // Fontra's own layers use roughly 100–700; higher draws on top
+    zIndex: 150, // Fontra's own layers use 0–700; higher draws on top
     screenParameters: { strokeWidth: 1 }, // in screen pixels, whatever the zoom
     colors: { strokeColor: "#0A84FF88" },
     colorsDarkMode: { strokeColor: "#64D2FF88" },
@@ -267,7 +267,7 @@ function addCenterLineLayer(editor) {
 }
 ```
 
-Call `addCenterLineLayer(editor)` from `init()`. To show and hide it, call `layers.toggle(LAYER_ID, on)` (from a checkbox in your panel, say), then `editor.canvasController.requestUpdate()`. Other `glyphsBySelectionMode` keys are `all`, `unselected`, `hovered` and `selected`. `draw` also receives `controller` (for `controller.magnification`).
+Call `addCenterLineLayer(editor)` from `init()`. To show and hide it, call `layers.toggle(LAYER_ID, on)` (from a checkbox in your panel, say), then `editor.canvasController.requestUpdate()`. Other `glyphsBySelectionMode` keys are `all`, `unselected`, `hovered`, `selected` and `notediting`. `draw` also receives `controller` (for `controller.magnification`).
 
 ### A tool in the toolbar
 
@@ -313,3 +313,4 @@ Install the package in the same Python environment as Fontra (`pip install -e .`
 - **View menu**: Fontra registers the *View* menu actions for visualization layers before plug-ins load. A plug-in layer marked `userSwitchable: true` shows in the menu with its raw action name and greyed out, so keep `userSwitchable: false` and offer the switch in your panel.
 - **Translations**: tab and tool tooltips are looked up in Fontra's translation tables, which a plug-in can't extend; set the `title` attributes yourself, as above.
 - **Editor only**: plug-ins load in the glyph editor, not in the font overview or font info views.
+- **Open tab not restored**: Fontra restores the sidebar tab that was open last time before plug-ins load, so a plug-in panel left open is closed again after a reload. Users click its tab; nothing to do on your side.
