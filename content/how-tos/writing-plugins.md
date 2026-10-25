@@ -45,7 +45,7 @@ Most people start with an editor plug-in, so the rest of this page is mainly abo
 The address can be:
 
 - **`owner/repo`** (exactly one slash): a GitHub repository, loaded through jsDelivr as `https://cdn.jsdelivr.net/gh/owner/repo@latest`. Tag a release so `@latest` has something to resolve to, and check that `https://cdn.jsdelivr.net/gh/owner/repo@latest/plugin.json` opens in your browser. jsDelivr caches files, so a new release can take a while to show up.
-- **A full URL** (`https://example.com/my-plugin`) or **a path on the Fontra server** (`/localplugins/my-plugin`, `/hive/plugin`). A full URL's server must send CORS headers and serve the scripts as JavaScript: GitHub Pages does both (`https://<owner>.github.io/<repo>`, with the plug-in's files at the repository's root), so does jsDelivr. The repository's own address (`https://github.com/<owner>/<repo>`) and `raw.githubusercontent.com` do not: `plugin.json` loads, but the module comes as plain text, which the browser refuses, and the console says *Module didn't load*.
+- **A full URL** (`https://example.com/my-plugin`) or **a path on the Fontra server** (`/localplugins/my-plugin`, `/hive/plugin`). A full URL's server must send CORS headers and serve the scripts as JavaScript; GitHub Pages does both, the repository's own `github.com` address and `raw.githubusercontent.com` do not. See [Publishing your plug-in](#publishing-your-plug-in).
 
 Errors go to the browser console (“Plugin metadata not found”, “Module didn't load”, “Error occured when running … plugin”), and the editor carries on without the plug-in. Keep the developer tools open while you work.
 
@@ -306,6 +306,62 @@ myplugin = "my_package.client"   # serves my_package/client/ under /myplugin/
 ```
 
 Install the package in the same Python environment as Fontra (`pip install -e .` while developing) and restart the server.
+
+## Publishing your plug-in
+
+Two public addresses work for a plug-in kept in a GitHub repository, with `plugin.json` at the repository's root. Both were checked with the [Fontra Tutorials](https://github.com/Uplus-Type/fontra-tutorials) plug-in; what fails, and how, is noted so that you recognise it.
+
+### On GitHub Pages (a full URL)
+
+1. Put this workflow in the repository, as `.github/workflows/pages.yml`:
+
+   {% raw %}```yaml
+   name: Publish to GitHub Pages
+   on:
+     push:
+       branches: [main]
+     workflow_dispatch:
+   permissions:
+     contents: read
+     pages: write
+     id-token: write
+   concurrency:
+     group: pages
+     cancel-in-progress: false
+   jobs:
+     deploy:
+       runs-on: ubuntu-latest
+       environment:
+         name: github-pages
+         url: ${{ steps.deployment.outputs.page_url }}
+       steps:
+         - uses: actions/checkout@v4
+         - uses: actions/upload-pages-artifact@v3
+           with:
+             path: .
+         - id: deployment
+           uses: actions/deploy-pages@v4
+   ```{% endraw %}
+
+2. **Enable Pages on the repository: *Settings › Pages › Build and deployment › Source: GitHub Actions*.** This is the step that is easy to miss: without it the workflow runs and fails at its last step with *Failed to create deployment (status: 404) … Ensure GitHub Pages has been enabled*, and Fontra's plug-in manager answers *An error occured when fetching the plugin* because `https://<owner>.github.io/<repo>/plugin.json` is a 404 page (*There isn't a GitHub Pages site here*).
+3. Push to `main`, or re-run the failed workflow from the *Actions* tab. About a minute later, `https://<owner>.github.io/<repo>/plugin.json` opens in a browser.
+4. The address to add in *Application settings › Plugins* is `https://<owner>.github.io/<repo>` (the owner in lower case, no trailing slash). Every push to `main` publishes the new version; the browser may keep the old files for a while (reload with the cache disabled).
+
+GitHub Pages serves every file with the right media type and with `Access-Control-Allow-Origin: *`, which is what `import()` from Fontra's origin needs.
+
+### As `owner/repo` (jsDelivr)
+
+The short form `owner/repo` is loaded through jsDelivr as `https://cdn.jsdelivr.net/gh/owner/repo@latest/…`, and **`@latest` means the latest tagged release**: a repository with no tag has nothing to resolve to, `plugin.json` is a 404, and the plug-in manager refuses the address with the same *An error occured when fetching the plugin*.
+
+1. Tag a release and push the tag: `git tag v0.1.0 && git push --tags` (any tag that reads as a version; a GitHub *Release* made from the web does the same).
+2. Check that `https://cdn.jsdelivr.net/gh/<owner>/<repo>@latest/plugin.json` opens in a browser. jsDelivr caches `@latest` for up to 24 hours, so a brand-new tag can take a while to show up; the exact tag, `…@v0.1.0/plugin.json`, is available at once.
+3. Add `owner/repo` in *Application settings › Plugins*. Users get the newest tag the next time jsDelivr refreshes; tag again to publish a new version.
+
+### What does not work
+
+- The repository's own address (`https://github.com/<owner>/<repo>`): `plugin.json` is not there, *Plugin metadata not found*.
+- `https://raw.githubusercontent.com/<owner>/<repo>/main`: `plugin.json` loads, but the scripts come as `text/plain`, which the browser refuses for a module: *Module didn't load*.
+- Any static server without CORS headers (Python's `http.server`, say): the browser refuses the cross-origin fetch.
 
 ## Limitations
 
