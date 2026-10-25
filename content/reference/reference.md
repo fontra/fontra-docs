@@ -51,6 +51,12 @@ theoretical knowledge · information-oriented · useful when working
 </div>
 
 <div class='col-md' markdown='1'>
+### Plug-ins
+
+- [Plug-ins](plugins) {% comment %} 4800 {% endcomment %}
+</div>
+
+<div class='col-md' markdown='1'>
 ### Menu bar (common items)
 
 - [Menu bar](menu) {% comment %} 4900 {% endcomment %}

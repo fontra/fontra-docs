@@ -65,7 +65,7 @@ A plug-in **cannot import Fontra's own modules** (`@fontra/core/…`, `Panel`, `
 | `editor.addSidebarPanel(panel, "left" \| "right")` | Add a panel |
 | `editor.addEditTool(tool)` | Add a tool to the toolbar |
 
-These are the editor's internals rather than a frozen API, so they can change. Read the Fontra source when in doubt, and test your plug-in when you update Fontra.
+These are the editor's internals rather than a frozen API, so they can change. The [Plug-ins reference]({{ site.url }}/reference/plugins) lists them in more detail; read the Fontra source when in doubt, and test your plug-in when you update Fontra.
 
 ## Boilerplate
 
@@ -271,7 +271,7 @@ Call `addCenterLineLayer(editor)` from `init()`. To show and hide it, call `laye
 
 ### A tool in the toolbar
 
-`editor.addEditTool(tool)` takes an object with `identifier`, `iconPath`, `activate()`, `deactivate()`, `handleHover(event)`, `handleKeyDown(event)`, `getContextMenuItems()` and `async handleDrag(eventStream, initialEvent)`. `handleDrag` is called on mouse down; iterate `eventStream` to follow the drag until mouse up. `editor.canvasController.localPoint(event)` converts an event to canvas coordinates. Two details: the button's tooltip is looked up as `editor.<identifier>` in Fontra's translations, so set `title` on the button yourself (`document.querySelector('[data-tool="<identifier>"]')`); and Fontra creates the button with the `selected` class, so remove it unless your tool is the active one. The Comment tool in Fontra Hive's [`comments.js`](https://github.com/Uplus-Type/fontra-hive/blob/main/src/fontra_hive/client/plugin/comments.js) (class `HiveCommentTool`) is a complete example, including handing clicks it doesn't want back to the pointer tool.
+`editor.addEditTool(tool)` takes an object with `identifier`, `iconPath`, `activate()`, `deactivate()`, `handleHover(event)`, `handleKeyDown(event)`, `getContextMenuItems()` and `async handleDrag(eventStream, initialEvent)` (details in the [reference]({{ site.url }}/reference/plugins#edit-tool)). `handleDrag` is called on mouse down; iterate `eventStream` to follow the drag until mouse up. `editor.canvasController.localPoint(event)` converts an event to canvas coordinates. Two details: the button's tooltip is looked up as `editor.<identifier>` in Fontra's translations, so set `title` on the button yourself (`document.querySelector('[data-tool="<identifier>"]')`); and Fontra creates the button with the `selected` class, so remove it unless your tool is the active one. The Comment tool in Fontra Hive's [`comments.js`](https://github.com/Uplus-Type/fontra-hive/blob/main/src/fontra_hive/client/plugin/comments.js) (class `HiveCommentTool`) is a complete example, including handing clicks it doesn't want back to the pointer tool.
 
 ## Examples to learn from
 
@@ -295,7 +295,7 @@ It is not loaded through the plug-in mechanism, though: it is part of Fontra's b
 - [fontra-rcjk](https://github.com/fontra/fontra-rcjk): a project manager with login, talking to a remote server.
 - A workflow action: in your package, decorate a `@dataclass(kw_only=True)` subclass of `BaseFilter` with `@registerFilterAction("my-action")` (both from `fontra.workflow.actions.base`), implement `async def processGlyph(self, glyph)`, and declare the module in the `fontra.workflow.actions` entry point group. `RoundCoordinates` in Fontra's [`workflow/actions/glyph.py`](https://github.com/fontra/fontra/blob/main/src/fontra/workflow/actions/glyph.py) is a short model.
 
-The entry points go in your package's `pyproject.toml`:
+The entry points go in your package's `pyproject.toml` (all groups are listed in the [reference]({{ site.url }}/reference/plugins#server-plug-ins)):
 
 ```toml
 [project.entry-points."fontra.filesystem.backends"]
